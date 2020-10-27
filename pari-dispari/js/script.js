@@ -7,25 +7,15 @@
 
 // l'utente sceglie se scommettere su pari o dispari
 var scommessaUtente = prompt("scegli tra pari o dispari");
-document.getElementById('scommessautente').innerHTML = "Hai scommesso: " + scommessaUtente;
+document.getElementById('scommessautente').innerHTML = "Hai scelto: " + scommessaUtente;
 
 // dichiarazione numero utente
 var numeroUtente = parseInt(prompt("scegli un numero tra 1 e 5"));
-document.getElementById('numeroutente').innerHTML = "Hai scelto: " + numeroUtente;
+document.getElementById('numeroutente').innerHTML = "Il tuo numero è: " + numeroUtente;
 
-// funzione per dichiarare il numero random del computer con ciclo
-
-// for (var i = 0; i < 1; i++) {
-//   var numero = generatoreNumeroPc(5);
-//   console.log(numero);
-// }
-//
-// function generatoreNumeroPc(numeroPc) {
-//   return Math.floor(Math.random() * numeroPc) +1;
-// }
-
-var numero = generatoreNumeroPc()
-document.getElementById('numeropc').innerHTML = "Il pc ha scelto: " + numero;
+// funzione per dichiarare il numero random del computer
+var numeroGenerato = generatoreNumeroPc()
+document.getElementById('numeropc').innerHTML = "Il numero del pc è: " + numeroGenerato;
 
 function generatoreNumeroPc() {
   var numeroPc = Math.floor(Math.random() * 5) +1;
@@ -33,7 +23,7 @@ function generatoreNumeroPc() {
 }
 
 // sommare i due numeri
-var sommaNumeri = numeroUtente + numero;
+var sommaNumeri = numeroUtente + numeroGenerato;
 document.getElementById('sommanumeri').innerHTML = "La somma dei due numeri è: " + sommaNumeri;
 
 // funzione per stabilere se la somma dei due numeri è pari o dispari
