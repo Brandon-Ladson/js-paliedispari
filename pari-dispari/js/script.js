@@ -7,13 +7,13 @@
 
 // l'utente sceglie se scommettere su pari o dispari
 var scommessaUtente = prompt("scegli tra pari o dispari");
-console.log("la tua scommessa è: " + scommessaUtente);
+document.getElementById('scommessautente').innerHTML = "Hai scommesso: " + scommessaUtente;
 
 // dichiarazione numero utente
 var numeroUtente = parseInt(prompt("scegli un numero tra 1 e 5"));
-console.log("il tuo numero è: " + numeroUtente);
+document.getElementById('numeroutente').innerHTML = "Hai scelto: " + numeroUtente;
 
-// funzione per dichiarare il numero random del computer
+// funzione per dichiarare il numero random del computer con ciclo
 
 // for (var i = 0; i < 1; i++) {
 //   var numero = generatoreNumeroPc(5);
@@ -25,7 +25,7 @@ console.log("il tuo numero è: " + numeroUtente);
 // }
 
 var numero = generatoreNumeroPc()
-console.log(numero);
+document.getElementById('numeropc').innerHTML = "Il pc ha scelto: " + numero;
 
 function generatoreNumeroPc() {
   var numeroPc = Math.floor(Math.random() * 5) +1;
@@ -34,26 +34,24 @@ function generatoreNumeroPc() {
 
 // sommare i due numeri
 var sommaNumeri = numeroUtente + numero;
-console.log("la somma dei due numeri è: " + sommaNumeri);
+document.getElementById('sommanumeri').innerHTML = "La somma dei due numeri è: " + sommaNumeri;
 
 // funzione per stabilere se la somma dei due numeri è pari o dispari
 var risultato = confrontoNumeri();
-console.log(risultato);
 
 function confrontoNumeri() {
-
   if (sommaNumeri % 2 === 0) {
     return "pari";
 
   } else {
     return "dispari";
   }
-
 }
 
 // stampare messaggio di vittoria o sconfitta
 if (scommessaUtente === risultato) {
-  alert("HAI VINTO!")
+  document.getElementById('risultatogioco').innerHTML = "HAI VINTO!";
+
 } else {
-  alert("HAI PERSO!");
+  document.getElementById('risultatogioco').innerHTML = "HAI PERSO!";
 }
