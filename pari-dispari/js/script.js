@@ -14,23 +14,22 @@ var numeroUtente = parseInt(prompt("scegli un numero tra 1 e 5"));
 document.getElementById('numeroutente').innerHTML = "Il tuo numero è: " + numeroUtente;
 
 // funzione per dichiarare il numero random del computer
-var numeroGenerato = generatoreNumeroPc()
-document.getElementById('numeropc').innerHTML = "Il numero del pc è: " + numeroGenerato;
+var numeroPc = generatoreNumeroPc(5)
+document.getElementById('numeropc').innerHTML = "Il numero del pc è: " + numeroPc;
 
-function generatoreNumeroPc() {
-  var numeroPc = Math.floor(Math.random() * 5) +1;
-  return numeroPc;
+function generatoreNumeroPc(numero) {
+  return Math.floor(Math.random() * numero) +1;
 }
 
 // sommare i due numeri
-var sommaNumeri = numeroUtente + numeroGenerato;
+var sommaNumeri = numeroUtente + numeroPc;
 document.getElementById('sommanumeri').innerHTML = "La somma dei due numeri è: " + sommaNumeri;
 
 // funzione per stabilere se la somma dei due numeri è pari o dispari
-var risultato = confrontoNumeri();
+var risultato = confrontoNumeri(sommaNumeri);
 
-function confrontoNumeri() {
-  if (sommaNumeri % 2 === 0) {
+function confrontoNumeri(numero) {
+  if (numero % 2 === 0) {
     return "pari";
 
   } else {
